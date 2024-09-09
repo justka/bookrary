@@ -1,0 +1,8 @@
+.text {
+  &__text {
+    color: red;
+    &--h1 {
+      font-size: 32px;
+    }
+  }
+}
