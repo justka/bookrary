@@ -1,11 +1,11 @@
 import { List } from "ui/List/List";
+import { generateRandomBooks } from "./BooksList.utils";
 
 export function BooksList() {
-  const books = [{ title: "Firefly lane" }];
-  const listItems = books.map((book) => {
+  const listItems = generateRandomBooks({ quantity: 10 }).map((book, index) => {
     return {
-      text: book.title,
-      value: book.title,
+      text: `${book.author} - ${book.title} (${book.publishYear}); ${book.pagesQuantity} stron`,
+      value: String(index + 1),
     };
   });
 

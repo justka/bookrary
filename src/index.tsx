@@ -8,7 +8,7 @@ const rootElement = document.getElementById("root");
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
-      <Text variant="h1" text="Hello, Bookrary!" />
+      <Text text="Bookrary" variant="h1" />
       <BooksList />
     </React.StrictMode>
   );

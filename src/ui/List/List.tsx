@@ -6,7 +6,7 @@ export function List({
   return (
     <ul>
       {listItems.map((item) => {
-        return <li>{item.text}</li>;
+        return <li key={item.value}>{item.text}</li>;
       })}
     </ul>
   );
