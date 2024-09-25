@@ -15,7 +15,8 @@ Application to manage books in home library. List of unread books.
 Project is created using:
 
 - React,
-- TypeScript.
+- TypeScript,
+- Material UI.
 
 ## Future plans
 

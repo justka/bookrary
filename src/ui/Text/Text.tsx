@@ -1,5 +1,5 @@
-import React from "react";
 import "./Text.scss";
+import Typography from "@mui/material/Typography";
 
 export function Text({
   text,
@@ -10,7 +10,7 @@ export function Text({
 }) {
   switch (variant) {
     case "h1": {
-      return <h1 className="text__text text__text--h1">{text}</h1>;
+      return <Typography variant={variant}>{text}</Typography>;
     }
     case "span": {
       return <span className="text__text text__text--span">{text}</span>;
