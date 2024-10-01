@@ -1,3 +1,4 @@
+import React from "react";
 import { generateRandomBooks } from "./BooksList.utils";
 import {
   Avatar,
@@ -10,15 +11,16 @@ import {
 } from "@mui/material";
 
 export function BooksList() {
-  const listItems = generateRandomBooks({ quantity: 10 });
+  const listItems = generateRandomBooks({ quantity: 2 });
 
   return (
     <ListFromMaterialUi
       sx={{ bgcolor: "background.paper", maxWidth: 360, width: "100%" }}
     >
+      {/* TODO: Handle empty list */}
       {listItems.map((item, index, baseArray) => {
         return (
-          <>
+          <React.Fragment key={item.title}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt={item.title} src="/" />
@@ -42,7 +44,7 @@ export function BooksList() {
             {index !== baseArray.length - 1 ? (
               <Divider component="li" variant="inset" />
             ) : null}
-          </>
+          </React.Fragment>
         );
       })}
     </ListFromMaterialUi>
