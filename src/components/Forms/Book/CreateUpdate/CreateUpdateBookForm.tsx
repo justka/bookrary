@@ -1,30 +1,30 @@
+import { FORM_FIELD_TYPE } from "constants/formFieldType";
 import { Form } from "ui/Form/Form";
 
 export function CreateUpdateBookForm() {
   const fields = [
     {
-      formFieldType: "input",
-      // TODO: Put formFieldType to constants
+      formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Author",
       name: "author",
     },
     {
-      formFieldType: "input",
+      formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Title",
       name: "title",
     },
     {
-      formFieldType: "input",
+      formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Publish year",
       name: "publishYear",
     },
     {
-      formFieldType: "input",
+      formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Pages quantity",
       name: "pagesQuantity",
     },
     {
-      formFieldType: "formSubmission",
+      formFieldType: FORM_FIELD_TYPE.FORM_SUBMISSION,
       label: "Submit form",
     },
   ];
