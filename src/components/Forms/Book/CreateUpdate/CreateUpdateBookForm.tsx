@@ -1,7 +1,8 @@
 import { FORM_FIELD_TYPE } from "constants/formFieldType";
 import { Form } from "ui/Form/Form";
 
-export function CreateUpdateBookForm() {
+export function CreateUpdateBookForm({ setListItems }) {
+  // TODO: Store 'setListItems' in store
   const fields = [
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
@@ -29,7 +30,12 @@ export function CreateUpdateBookForm() {
     },
   ];
 
-  const onSubmit = (values) => console.log({ values });
+  const onSubmit = (values) => {
+    console.log({ values });
+    setListItems((items) => {
+      return [...items, values];
+    });
+  };
 
   return <Form fields={fields} onSubmit={onSubmit} />;
 }

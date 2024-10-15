@@ -1,5 +1,6 @@
 import { FORM_FIELD_TYPE } from "constants/formFieldType";
 import { Form as ReactFinalForm, Field } from "react-final-form";
+import { Message } from "ui/Message/Message";
 
 export function Form({ fields, onSubmit }) {
   return (
@@ -27,10 +28,7 @@ export function Form({ fields, onSubmit }) {
                 );
               }
               default: {
-                return (
-                  <p key="unsupportedFieldTypeKey">Unsupported Field Type</p>
-                  // TODO: Use <Message/> component to display above message
-                );
+                return <Message text="Unsupported Field Type" />;
               }
             }
           })}

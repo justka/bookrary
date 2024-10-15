@@ -1,5 +1,4 @@
 import React from "react";
-import { generateRandomBooks } from "./ListContent.utils";
 import {
   Avatar,
   Divider,
@@ -10,9 +9,8 @@ import {
 } from "@mui/material";
 import { Message } from "ui/Message/Message";
 
-export function ListContent() {
-  const listItems = generateRandomBooks({ quantity: 0 });
-
+export function ListContent({ listItems = [] }) {
+  // TODO: Store 'listItems' in store
   if (listItems.length === 0) {
     return <Message text="List is empty" />;
   }
