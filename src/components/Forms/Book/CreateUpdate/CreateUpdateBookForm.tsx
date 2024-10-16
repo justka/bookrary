@@ -1,8 +1,17 @@
 import { FORM_FIELD_TYPE } from "constants/formFieldType";
+import { useDispatch } from "react-redux";
+import { addBookToList } from "store/booksSlice";
 import { Form } from "ui/Form/Form";
+import { showNotification } from "utils/notification";
 
-export function CreateUpdateBookForm({ setListItems }) {
-  // TODO: Store 'setListItems' in store
+export function CreateUpdateBookForm() {
+  const dispatch = useDispatch();
+
+  const onSubmit = (values) => {
+    dispatch(addBookToList(values));
+    showNotification();
+  };
+
   const fields = [
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
@@ -29,13 +38,6 @@ export function CreateUpdateBookForm({ setListItems }) {
       label: "Submit form",
     },
   ];
-
-  const onSubmit = (values) => {
-    console.log({ values });
-    setListItems((items) => {
-      return [...items, values];
-    });
-  };
 
   return <Form fields={fields} onSubmit={onSubmit} />;
 }

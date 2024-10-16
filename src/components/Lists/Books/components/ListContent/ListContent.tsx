@@ -8,15 +8,28 @@ import {
   Typography,
 } from "@mui/material";
 import { Message } from "ui/Message/Message";
+import { useSelector } from "react-redux";
 
-export function ListContent({ listItems = [] }) {
-  // TODO: Store 'listItems' in store
-  if (listItems.length === 0) {
+export function ListContent() {
+  const { booksList } = useSelector(
+    (state: {
+      books: {
+        booksList: {
+          author: string;
+          title: string;
+          publishYear: string;
+          pagesQuantity: string;
+        }[];
+      };
+    }) => state.books
+  );
+
+  if (booksList.length === 0) {
     return <Message text="List is empty" />;
   }
-  return listItems.map((item, index, baseArray) => {
+  return booksList.map((item, index, baseArray) => {
     return (
-      <React.Fragment key={item.title}>
+      <React.Fragment key={`${index}-${item.title}`}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
             <Avatar alt={item.title} src="/" />

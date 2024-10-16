@@ -28,7 +28,11 @@ export function Form({ fields, onSubmit }) {
                 );
               }
               default: {
-                return <Message text="Unsupported Field Type" />;
+                return (
+                  <Message
+                    text={`Unsupported field type: "${field.formFieldType}"`}
+                  />
+                );
               }
             }
           })}
