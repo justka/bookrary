@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Alert,
+  AlertTitle,
   Avatar,
   Divider,
   ListItem,
@@ -7,7 +9,6 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { Message } from "ui/Message/Message";
 import { useSelector } from "react-redux";
 
 export function ListContent() {
@@ -25,7 +26,12 @@ export function ListContent() {
   );
 
   if (booksList.length === 0) {
-    return <Message text="List is empty" />;
+    return (
+      <Alert severity="info" variant="outlined">
+        <AlertTitle>Info</AlertTitle>
+        <span>List is empty</span>
+      </Alert>
+    );
   }
   return booksList.map((item, index, baseArray) => {
     return (
