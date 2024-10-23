@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   Alert,
   AlertTitle,
@@ -9,7 +10,6 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { useSelector } from "react-redux";
 
 export function ListContent() {
   const { booksList } = useSelector(
@@ -17,9 +17,9 @@ export function ListContent() {
       books: {
         booksList: {
           author: string;
-          title: string;
-          publishYear: string;
           pagesQuantity: string;
+          publishYear: string;
+          title: string;
         }[];
       };
     }) => state.books
@@ -27,7 +27,10 @@ export function ListContent() {
 
   if (booksList.length === 0) {
     return (
-      <Alert severity="info" variant="outlined">
+      <Alert
+        severity="info"
+        variant="outlined"
+      >
         <AlertTitle>Info</AlertTitle>
         <span>List is empty</span>
       </Alert>
@@ -38,7 +41,10 @@ export function ListContent() {
       <React.Fragment key={`${index}-${item.title}`}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar alt={item.title} src="/" />
+            <Avatar
+              alt={item.title}
+              src="/"
+            />
           </ListItemAvatar>
           <ListItemText
             primary={`${item.title} (${item.publishYear})`}
@@ -57,7 +63,10 @@ export function ListContent() {
           />
         </ListItem>
         {index !== baseArray.length - 1 ? (
-          <Divider component="li" variant="inset" />
+          <Divider
+            component="li"
+            variant="inset"
+          />
         ) : null}
       </React.Fragment>
     );

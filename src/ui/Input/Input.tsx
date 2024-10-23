@@ -4,6 +4,12 @@ export function Input({ label, name }) {
   const id = `input-${name}-${label}`;
 
   return (
-    <TextField fullWidth id={id} label={label} name={name} variant="standard" />
+    <TextField
+      fullWidth
+      id={id}
+      label={label}
+      name={name}
+      variant="standard"
+    />
   );
 }

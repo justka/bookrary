@@ -39,5 +39,10 @@ export function CreateUpdateBookForm() {
     },
   ];
 
-  return <Form fields={fields} onSubmit={onSubmit} />;
+  return (
+    <Form
+      fields={fields}
+      onSubmit={onSubmit}
+    />
+  );
 }
