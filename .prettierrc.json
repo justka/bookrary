@@ -10,8 +10,12 @@
   ],
   "importOrderGroupNamespaceSpecifiers": true,
   "importOrderSortSpecifiers": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-css-order"
+  ],
   "quoteProps": "consistent",
   "singleAttributePerLine": true,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "cssDeclarationSorterOrder": "alphabetical"
 }
