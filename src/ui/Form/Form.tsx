@@ -3,6 +3,7 @@ import { Field, Form as ReactFinalForm } from "react-final-form";
 import { Button } from "ui/Button/Button";
 import { Input } from "ui/Input/Input";
 import { Message } from "ui/Message/Message";
+import { validateFormFieldValue } from "utils/validateFormFieldValue";
 
 export function Form({ fields, onSubmit }) {
   return (
@@ -26,15 +27,27 @@ export function Form({ fields, onSubmit }) {
                     <Field
                       key={field.name}
                       name={field.name}
+                      // TODO: Trim value on blur
+                      validate={(value) =>
+                        validateFormFieldValue({
+                          name: field.name,
+                          required: field.required,
+                          value,
+                        })
+                      }
                     >
-                      {(props) => {
+                      {(fieldRenderProps) => {
                         return (
-                          <div>
-                            <Input
-                              label={field.label}
-                              name={props.input.name}
-                            />
-                          </div>
+                          <Input
+                            label={field.label}
+                            meta={fieldRenderProps.meta}
+                            name={fieldRenderProps.input.name}
+                            onBlur={fieldRenderProps.input.onBlur}
+                            onChange={fieldRenderProps.input.onChange}
+                            onFocus={fieldRenderProps.input.onFocus}
+                            required={field.required}
+                            value={fieldRenderProps.input.value}
+                          />
                         );
                       }}
                     </Field>

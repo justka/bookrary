@@ -1,3 +1,4 @@
+import { FORM_FIELD_NAME } from "constants/formFieldName";
 import { FORM_FIELD_TYPE } from "constants/formFieldType";
 import { useDispatch } from "react-redux";
 import { addBookToList } from "store/booksSlice";
@@ -16,22 +17,26 @@ export function CreateUpdateBookForm() {
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Author",
-      name: "author",
+      name: FORM_FIELD_NAME.AUTHOR,
+      required: true,
     },
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Title",
-      name: "title",
+      name: FORM_FIELD_NAME.TITLE,
+      required: true,
     },
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Publish year",
-      name: "publishYear",
+      name: FORM_FIELD_NAME.PUBLISH_YEAR,
+      required: true,
     },
     {
       formFieldType: FORM_FIELD_TYPE.INPUT,
       label: "Pages quantity",
-      name: "pagesQuantity",
+      name: FORM_FIELD_NAME.PAGES_QUANTITY,
+      required: true,
     },
     {
       formFieldType: FORM_FIELD_TYPE.FORM_SUBMISSION,

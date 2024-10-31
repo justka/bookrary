@@ -18,10 +18,15 @@ Project is created using:
 - TypeScript,
 - Material UI.
 
+## What's done
+
+- Display books list,
+- Form to add book,
+- Form fields validation.
+
 ## Future plans
 
 - Display books list,
-- Form to add/edit/delete books,
-- Form fields validation,
+- Form to edit/delete book,
 - External API integration,
 - Write tests.
