@@ -19,6 +19,7 @@ export function Form({ fields, onSubmit }) {
                     <Button
                       key={field.label}
                       text={field.label}
+                      type="submit"
                     />
                   );
                 }

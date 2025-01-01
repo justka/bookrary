@@ -1,4 +1,5 @@
 import { TextField } from "@mui/material";
+import { InputInterface } from "./Input.interface";
 
 export function Input({
   label,
@@ -9,7 +10,7 @@ export function Input({
   onFocus,
   required,
   value,
-}) {
+}: InputInterface) {
   const id = `input-${name}-${label}`;
   const isValidationError = meta.touched && !!meta.error;
 
