@@ -1,5 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeBookFromList } from "store/booksSlice";
+import { Button } from "ui/Button/Button";
 import {
   Alert,
   AlertTitle,
@@ -12,11 +14,14 @@ import {
 } from "@mui/material";
 
 export function ListContent() {
+  const dispatch = useDispatch();
+
   const { booksList } = useSelector(
     (state: {
       books: {
         booksList: {
           author: string;
+          id: number;
           pagesQuantity: string;
           publishYear: string;
           title: string;
@@ -62,6 +67,12 @@ export function ListContent() {
                     {` ${item.pagesQuantity} stron`}
                   </>
                 }
+              />
+              <Button
+                onClick={() => {
+                  dispatch(removeBookFromList(item.id));
+                }}
+                text="usuń"
               />
             </ListItem>
             {index !== baseArray.length - 1 ? (

@@ -9,7 +9,7 @@ export function CreateUpdateBookForm() {
   const dispatch = useDispatch();
 
   const onSubmit = (values) => {
-    dispatch(addBookToList(values));
+    dispatch(addBookToList({ ...values, id: new Date().getTime() }));
     showNotification();
   };
 
