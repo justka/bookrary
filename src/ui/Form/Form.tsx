@@ -9,9 +9,15 @@ export function Form({ fields, onSubmit }) {
   return (
     <ReactFinalForm
       onSubmit={onSubmit}
-      render={({ handleSubmit }) => {
+      render={({ form, handleSubmit }) => {
         return (
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleSubmit();
+              form.restart();
+            }}
+          >
             {fields.map((field, index: number) => {
               switch (field.formFieldType) {
                 case FORM_FIELD_TYPE.FORM_SUBMISSION: {
