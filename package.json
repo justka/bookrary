@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "prepare": "husky && husky install",
     "eslint": "npx eslint 'src/**/*.tsx' --fix",
@@ -63,6 +63,7 @@
     "eslint-plugin-perfectionist": "^3.9.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^8.0.3",
+    "jest": "^27.5.1",
     "prettier": "^3.3.3",
     "prettier-plugin-css-order": "^2.1.2"
   }

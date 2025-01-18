@@ -20,7 +20,6 @@ export function DisplayLocations() {
   if (error) {
     return <p>Error : {error.message}</p>;
   }
-
   return (
     <>
       {dataPrepared.map(({ description, id, name, photo }) => (

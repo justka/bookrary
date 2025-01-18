@@ -17,8 +17,10 @@ export function App() {
       />
       <BooksList />
       <Button
-        onClick={() => spaceXModal.show()}
-        text="SpaceX"
+        onClick={() => {
+          spaceXModal.show();
+        }}
+        text="Open SpaceX Locations"
       />
       <CreateUpdateBookForm />
     </Container>

@@ -11,6 +11,7 @@ export const Providers = ({ children }) => {
     cache: new InMemoryCache(),
     uri: "https://flyby-router-demo.herokuapp.com/",
   });
+
   return (
     <React.StrictMode>
       <ToastContainer />
