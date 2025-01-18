@@ -34,7 +34,9 @@
     "prepare": "husky && husky install",
     "eslint": "npx eslint 'src/**/*.tsx' --fix",
     "prettier": "npx prettier . --write",
-    "cleanup": "npm run eslint && npm run prettier"
+    "cleanup": "npm run eslint && npm run prettier",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +61,7 @@
     "@types/node": "^22.7.9",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
+    "cypress": "^14.0.0",
     "eslint": "^8.57.1",
     "eslint-plugin-perfectionist": "^3.9.1",
     "eslint-plugin-unused-imports": "^4.1.4",
