@@ -1,5 +1,15 @@
 import "./Message.scss";
 
 export function Message({ text }) {
-  return <div className="message__container">{text}</div>;
+  if (!text) {
+    return null;
+  }
+  return (
+    <div
+      className="message__container"
+      data-testid="message-id"
+    >
+      <p>{text}</p>
+    </div>
+  );
 }
