@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "CI=true react-scripts test --coverage",
     "eject": "react-scripts eject",
     "prepare": "husky && husky install",
     "eslint": "npx eslint 'src/**/*.tsx' --fix",
@@ -61,12 +61,14 @@
     "@types/node": "^22.7.9",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
+    "coveralls-next": "^4.2.1",
     "cypress": "^14.0.0",
     "eslint": "^8.57.1",
     "eslint-plugin-perfectionist": "^3.9.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
+    "nyc": "^17.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-css-order": "^2.1.2"
   }
