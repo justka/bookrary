@@ -4,12 +4,11 @@ import { SpaceXModal } from "components/SpaceXModal/SpaceXModal";
 import { Button } from "ui/Button/Button";
 import { Text } from "ui/Text/Text";
 import { useModal } from "@ebay/nice-modal-react";
-import { Container } from "@mui/material";
 
 export function Shelf() {
   const spaceXModal = useModal(SpaceXModal);
   return (
-    <Container maxWidth="sm">
+    <>
       <Text
         text="Bookrary"
         variant="h1"
@@ -22,6 +21,6 @@ export function Shelf() {
         text="Open SpaceX Locations"
       />
       <CreateUpdateBookForm />
-    </Container>
+    </>
   );
 }
