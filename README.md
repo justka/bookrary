@@ -16,17 +16,19 @@ Project is created using:
 
 - React,
 - TypeScript,
-- Material UI.
+- Material UI,
+- Recharts.
 
 ## What's done
 
 - Display books list,
 - Form to add book,
-- Form fields validation.
+- Form fields validation
+- Routing,
+- Statistics.
 
 ## Future plans
 
-- Display books list,
 - Form to edit/delete book,
 - External API integration,
 - Write tests.
